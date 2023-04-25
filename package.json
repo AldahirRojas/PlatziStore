@@ -9,12 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "next": "13.3.0",
+    "prettier": "^2.8.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.62.0"
   },
   "devDependencies": {
     "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0"
+    "eslint-config-next": "^12.3.4"
   }
 }
