@@ -10,8 +10,8 @@ const ProductItem = ({ product }) => {
 
 	const handleClick = item => {
 		console.log('in cart: ', state.cart.includes(item));
-		addToCart(item)
-	}
+		addToCart(item);
+	};
 
 	return (
 		<div className={styles.ProductItem}>
@@ -27,13 +27,35 @@ const ProductItem = ({ product }) => {
 					<p>${product.price}</p>
 					<p>{product.title}</p>
 				</div>
-				<figure className={styles['more-clickable-area']} onClick={() => handleClick(product)} >
-					{  state.cart.includes(product) ? <Image className={`${styles.disabled} ${styles['add-to-cart-btn']}`} src={addedToCartImage} alt="added to cart" />  : <Image className={`${styles['add-to-cart-btn']} ${styles.pointer}`} src={addToCartImage} alt="add to cart" /> }
-					
+				<figure
+					className={styles['more-clickable-area']}
+					role="button"
+					tabIndex="0"
+					onClick={() => handleClick(product)}
+					onKeyDown={e => {
+						if (e.key === 'Enter') {
+							handleClick(product);
+						}
+					}}
+				>
+				{/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+				{state.cart.includes(product) ? (
+					<Image
+					className={`${styles.disabled} ${styles['add-to-cart-btn']}`}
+					src={addedToCartImage}
+					alt="added to cart"
+					/>
+				) : (
+					<Image
+					className={`${styles['add-to-cart-btn']} ${styles.pointer}`}
+					src={addToCartImage}
+					alt="add to cart"
+					/>
+				)}
 				</figure>
 			</div>
 		</div>
 	);
-}
+};
 
 export default ProductItem;

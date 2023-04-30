@@ -4,7 +4,7 @@ import Image from 'next/image';
 import OrderItem from '@components/OrderItem';
 import AppContext from '@context/AppContext';
 import arrow from '@icons/flechita.svg';
-import styles from '@styles/MyOrder.module.scss'
+import styles from '@styles/MyOrder.module.scss';
 
 const MyOrder = () => {
 	const { state, toggleOrder } = useContext(AppContext);
@@ -13,7 +13,7 @@ const MyOrder = () => {
 		const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
 		const sum = state.cart.reduce(reducer, 0);
 		return sum;
-	}
+	};
 
 	return (
 		<aside className={styles.MyOrder}>
@@ -41,6 +41,6 @@ const MyOrder = () => {
 		</div>
 	</aside>
 	);
-}
+};
 
 export default MyOrder;

@@ -6,12 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "eslint src/ --fix"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^4.2.1",
     "next": "13.3.0",
     "prettier": "^2.8.7",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "eslint": "8.38.0",
-    "eslint-config-next": "^12.3.4"
+    "eslint-config-next": "^12.3.4",
+    "eslint-plugin-jsx-a11y": "^6.7.1"
   }
 }
